@@ -15,6 +15,8 @@ const nextConfig = {
     ]
   },
   basePath: '/bedsAndMoreRevamp',
+  assetPrefix: '/bedsAndMoreRevamp/',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
