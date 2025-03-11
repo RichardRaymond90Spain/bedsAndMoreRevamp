@@ -1,0 +1,85 @@
+"use client"
+
+import { Box, Container, Typography, Button } from "@mui/material"
+import Image from "next/image"
+
+export default function HeroSection() {
+  return (
+    <Box 
+      className="viewport-fit"
+      sx={{ 
+        position: 'relative',
+        height: '100vh',
+        width: '100%',
+        overflow: 'hidden'
+      }}
+    >
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1505693314120-0d443867891c')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      />
+      <Container
+        maxWidth="xl"
+        sx={{
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          zIndex: 1
+        }}
+      >
+        <Box
+          sx={{
+            textAlign: 'center',
+            color: 'white',
+            maxWidth: '800px'
+          }}
+        >
+          <Typography
+            variant="h1"
+            sx={{
+              fontSize: { xs: '2.5rem', md: '4rem' },
+              fontWeight: 600,
+              mb: 2
+            }}
+          >
+            Luxury Beds & Mattresses
+          </Typography>
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: '1.2rem', md: '1.5rem' },
+              fontWeight: 300,
+              mb: 4
+            }}
+          >
+            Experience the ultimate in comfort and style
+          </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              bgcolor: 'white',
+              color: 'black',
+              '&:hover': {
+                bgcolor: 'black',
+                color: 'white'
+              }
+            }}
+          >
+            Explore Our Collection
+          </Button>
+        </Box>
+      </Container>
+    </Box>
+  )
+} 
