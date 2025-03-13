@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Container, Typography, Grid } from "@/lib/node_modules/@mui/material"
+import { Box, Container, Typography, Grid } from "@mui/material"
 
 export default function AboutSection() {
   return (
