@@ -1,22 +1,6 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "installCommand": "npm install",
   "buildCommand": "npm run build",
-  "builds": [
-    {
-      "src": "next.config.mjs",
-      "use": "@vercel/next"
-    }
-  ],
-  "build": {
-    "env": {
-      "NODE_OPTIONS": "--max_old_space_size=4096"
-    }
-  },
-  "functions": {
-    "api/*": {
-      "memory": 3008
-    }
-  }
+  "installCommand": "npm install"
 } 
