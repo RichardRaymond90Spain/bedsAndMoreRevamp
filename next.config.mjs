@@ -14,6 +14,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    domains: ['images.unsplash.com'], // Add any external image domains you're using
     unoptimized: true,
   },
   experimental: {
