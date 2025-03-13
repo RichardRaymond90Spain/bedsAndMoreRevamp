@@ -6,23 +6,23 @@ import Link from "next/link"
 
 const categories = [
   {
-    title: "MATTRESSES",
-    image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80",
-    link: "/mattresses"
-  },
-  {
-    title: "BEDS",
-    image: "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&q=80",
-    link: "/beds"
-  },
-  {
-    title: "HEADBOARDS",
+    title: "SOFT FURNISHINGS",
     image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80",
-    link: "/headboards"
+    link: "/soft-furnishings"
+  },
+  {
+    title: "FURNITURE",
+    image: "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&q=80",
+    link: "/furniture"
+  },
+  {
+    title: "DECORATION",
+    image: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&q=80",
+    link: "/decoration"
   }
 ]
 
-export default function FeaturedCategories() {
+export default function SecondaryCategories() {
   return (
     <Box 
       className="viewport-fit"
@@ -38,53 +38,7 @@ export default function FeaturedCategories() {
         sx={{ py: { xs: 4, md: 8 } }}
       >
         <Grid container spacing={{ xs: 4, md: 6 }}>
-          {/* Left side content */}
-          <Grid item xs={12} md={5}>
-            <Box 
-              className="mobile-content"
-              sx={{ pr: { md: 6 } }}
-            >
-              <Typography
-                component="h1"
-                variant="h2"
-                className="mobile-text"
-                sx={{
-                  fontSize: { xs: "2rem", md: "3.5rem" },
-                  fontWeight: 300,
-                  mb: 4,
-                  color: "#333",
-                  lineHeight: 1.2
-                }}
-              >
-                AT BEDS & MORE WE BELIEVE SLEEP IS THE ULTIMATE LUXURY
-              </Typography>
-              <Typography
-                variant="body1"
-                className="mobile-text"
-                sx={{
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  color: "#666",
-                  mb: 2,
-                  lineHeight: 1.6
-                }}
-              >
-                At Beds & More, we take our responsibility for helping you to sleep well and wake up feeling rejuvenated very seriously. We have a passion for working with nature's very best comfort materials to inspire you to sleep sustainably.
-              </Typography>
-              <Typography
-                variant="body1"
-                className="mobile-text"
-                sx={{
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  color: "#666",
-                  lineHeight: 1.6
-                }}
-              >
-                We responsibly source the finest materials to handcraft beautifully comfortable beds and supremely comfortable mattresses that help enhance your health and wellbeing.
-              </Typography>
-            </Box>
-          </Grid>
-
-          {/* Right side category cards */}
+          {/* Left side category cards */}
           <Grid item xs={12} md={7}>
             <Grid container spacing={2} className="mobile-content">
               {categories.map((category) => (
@@ -160,6 +114,53 @@ export default function FeaturedCategories() {
                 </Grid>
               ))}
             </Grid>
+          </Grid>
+
+          {/* Right side content */}
+          <Grid item xs={12} md={5}>
+            <Box 
+              className="mobile-content"
+              sx={{ pl: { md: 6 } }}
+            >
+              <Typography
+                component="h2"
+                variant="h2"
+                className="mobile-text"
+                sx={{
+                  fontSize: { xs: "2rem", md: "3.5rem" },
+                  fontWeight: 300,
+                  mb: 4,
+                  color: "#333",
+                  lineHeight: 1.2
+                }}
+              >
+                COMPLETE YOUR PERFECT BEDROOM
+              </Typography>
+              <Typography
+                variant="body1"
+                className="mobile-text"
+                sx={{
+                  fontSize: { xs: "1rem", md: "1.1rem" },
+                  color: "#666",
+                  mb: 2,
+                  lineHeight: 1.6
+                }}
+              >
+                Transform your bedroom into a luxurious retreat with our carefully curated collection of soft furnishings, furniture, and decorative pieces.
+              </Typography>
+              <Typography
+                variant="body1"
+                className="mobile-text"
+                sx={{
+                  fontSize: { xs: "1rem", md: "1.1rem" },
+                  color: '#B19B9B',
+                  fontWeight: 500,
+                  lineHeight: 1.6
+                }}
+              >
+                Get 10% Store Credit Cashback on all purchases made in our Mijas Costa and Marbella stores!
+              </Typography>
+            </Box>
           </Grid>
         </Grid>
       </Container>

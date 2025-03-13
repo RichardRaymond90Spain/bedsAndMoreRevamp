@@ -73,4 +73,112 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer components {
+  .viewport-fit {
+    @apply min-h-screen w-full overflow-x-hidden p-0;
+  }
+
+  .mobile-container {
+    @apply px-0;
+  }
+
+  .mobile-content {
+    @apply pt-2 px-4;
+  }
+
+  .mobile-section {
+    @apply mb-4;
+  }
+
+  .mobile-text {
+    @apply text-sm leading-relaxed;
+  }
+
+  .mobile-image {
+    @apply w-full h-auto object-cover;
+  }
+
+  .standard-rules {
+    @apply overflow-x-hidden w-full max-w-full box-border p-0 m-0;
+  }
+}
+
+/* Mobile viewport standards - MUST BE FOLLOWED BY ALL COMPONENTS */
+@media screen and (max-width: 600px) {
+  /* Core viewport rules - mandatory */
+  .viewport-fit {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0;
+  }
+
+  /* Container spacing rules */
+  .mobile-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Content spacing standards */
+  .mobile-content {
+    padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Vertical spacing between sections */
+  .mobile-section {
+    margin-bottom: 16px;
+  }
+
+  /* Text standards for mobile */
+  .mobile-text {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  /* Image container standards */
+  .mobile-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* Global WhatsApp Button Standards - MANDATORY */
+.whatsapp-button {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 1000;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-button {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+@media screen and (min-width: 768px) {
+  .whatsapp-button {
+    bottom: 24px;
+    left: 24px;
+  }
 } 

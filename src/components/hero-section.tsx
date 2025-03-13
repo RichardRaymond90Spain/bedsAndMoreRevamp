@@ -9,7 +9,7 @@ export default function HeroSection() {
       className="viewport-fit"
       sx={{ 
         position: 'relative',
-        height: '100vh',
+        height: { xs: '100vh', md: '80vh' },
         width: '100%',
         overflow: 'hidden'
       }}
@@ -26,8 +26,9 @@ export default function HeroSection() {
           backgroundPosition: 'center'
         }}
       />
-      <Container
+      <Container 
         maxWidth="xl"
+        className="mobile-container"
         sx={{
           height: '100%',
           display: 'flex',
@@ -38,28 +39,31 @@ export default function HeroSection() {
         }}
       >
         <Box
+          className="mobile-content"
           sx={{
             textAlign: 'center',
             color: 'white',
             maxWidth: '800px'
           }}
         >
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: { xs: '2.5rem', md: '4rem' },
-              fontWeight: 600,
-              mb: 2
+          <Typography 
+            variant="h1" 
+            className="mobile-text"
+            sx={{ 
+              fontSize: { xs: '2.5rem', md: '4rem' }, 
+              fontWeight: 600, 
+              mb: 2 
             }}
           >
             Luxury Beds & Mattresses
           </Typography>
-          <Typography
-            variant="h2"
-            sx={{
-              fontSize: { xs: '1.2rem', md: '1.5rem' },
-              fontWeight: 300,
-              mb: 4
+          <Typography 
+            variant="h2" 
+            className="mobile-text"
+            sx={{ 
+              fontSize: { xs: '1.2rem', md: '1.5rem' }, 
+              fontWeight: 300, 
+              mb: 4 
             }}
           >
             Experience the ultimate in comfort and style

@@ -1,26 +1,28 @@
 "use client"
 
-import HeroSection from '@/components/hero-section'
-import { default as CashbackBanner } from '@/components/CashbackBanner'
+import Navbar from '@/components/layout/navbar'
+import HeroSection from '@/components/sections/hero'
 import { default as FeaturedCategories } from '@/components/FeaturedCategories'
+import { default as SecondaryCategories } from '@/components/SecondaryCategories'
 import { default as CompanyIntro } from '@/components/CompanyIntro'
+import { default as Footer } from '@/components/Footer'
 import { Container, Typography, Grid } from '@mui/material'
+import OffersGrid from '@/components/OffersGrid'
+import FurniturePackages from '@/components/FurniturePackages'
 
 export default function HomePage() {
   return (
-    <main>
-      <HeroSection />
-      <CashbackBanner />
-      <FeaturedCategories />
-      <CompanyIntro />
-      <Container maxWidth="xl" className="py-16">
-        <Typography variant="h2" className="text-3xl font-bold mb-8 text-center">
-          Featured Products
-        </Typography>
-        <Grid container spacing={4}>
-          {/* Add ProductCard components here */}
-        </Grid>
-      </Container>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <FeaturedCategories />
+        <CompanyIntro />
+        <SecondaryCategories />
+        <OffersGrid />
+        <FurniturePackages />
+        <Footer />
+      </main>
+    </>
   )
 }

@@ -1,7 +1,9 @@
-import { Inter } from 'next/font/google'
-import Providers from './providers'
 import './globals.css'
+import { Inter } from 'next/font/google'
 import Navbar from '@/components/layout/navbar'
+import Providers from './providers'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import InfoBanner from '@/components/InfoBanner'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,10 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ backgroundColor: '#f9f9f9' }}>
+      <body className={inter.className}>
         <Providers>
-          <Navbar />
-          {children}
+          <div className="min-h-screen flex flex-col">
+            <InfoBanner />
+            <Navbar />
+            <main className="flex-grow pt-[92px]">
+              {children}
+            </main>
+            <WhatsAppButton />
+          </div>
         </Providers>
       </body>
     </html>

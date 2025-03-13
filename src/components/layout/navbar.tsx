@@ -13,12 +13,15 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  ListItemIcon,
   Box,
   Container,
   useMediaQuery,
   useTheme,
 } from "@mui/material"
 import { Menu as MenuIcon } from "@mui/icons-material"
+import LocationOnIcon from '@mui/icons-material/LocationOn'
+import Image from "next/image"
 
 const navItems = [
   { name: "HOME", href: "/" },
@@ -37,37 +40,30 @@ export default function Navbar() {
 
   return (
     <AppBar 
-      position="sticky" 
-      color="default" 
-      elevation={0} 
+      position="fixed"
       sx={{ 
-        bgcolor: "background.default",
-        borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
-        height: '60px'
+        bgcolor: 'white', 
+        boxShadow: 1,
+        height: '60px',
+        top: '32px',
+        zIndex: 1100
       }}
     >
-      <Container maxWidth="xl" disableGutters>
-        <Toolbar 
-          disableGutters 
-          sx={{ 
-            minHeight: '60px !important',
-            px: 2,
-            py: 0,
-            justifyContent: 'space-between'
-          }}
-        >
-          <Link href="/" style={{ textDecoration: 'none' }}>
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 700,
-                color: "#B19B9B",
-                fontSize: "1.25rem",
-                mr: 4
-              }}
-            >
-              BEDS & MORE
-            </Typography>
+      <Container maxWidth="xl">
+        <Box sx={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          height: '100%'
+        }}>
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              alt="Yorkshire Linen Beds & More"
+              width={180}
+              height={50}
+              priority
+            />
           </Link>
 
           {isMobile ? (
@@ -83,14 +79,14 @@ export default function Navbar() {
             <>
               <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "flex-start", gap: 3 }}>
                 {navItems.map((item) => (
-                  <Link 
-                    key={item.name} 
+                  <Link
+                    key={item.name}
                     href={item.href}
                     style={{ textDecoration: 'none' }}
                   >
                     <Button 
                       color="inherit"
-                      sx={{
+                      sx={{ 
                         fontSize: '13px',
                         fontWeight: 400,
                         color: '#000',
@@ -109,16 +105,30 @@ export default function Navbar() {
               </Box>
 
               <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                <Link 
-                  href="/contact"
-                  style={{ textDecoration: 'none' }}
-                >
+                <Link href="/stores" style={{ textDecoration: 'none' }}>
                   <Button 
+                    variant="outlined" 
                     sx={{ 
-                      fontSize: '14px',
-                      color: '#000',
+                      borderColor: '#B19B9B',
+                      color: '#B19B9B',
                       '&:hover': {
-                        color: '#B19B9B'
+                        borderColor: '#927e7e',
+                        bgcolor: 'rgba(177, 155, 155, 0.04)'
+                      }
+                    }}
+                  >
+                    Find Us
+                  </Button>
+                </Link>
+                <Link href="/contact" style={{ textDecoration: 'none' }}>
+                  <Button 
+                    variant="outlined"
+                    sx={{ 
+                      borderColor: '#B19B9B',
+                      color: '#B19B9B',
+                      '&:hover': {
+                        borderColor: '#927e7e',
+                        bgcolor: 'rgba(177, 155, 155, 0.04)'
                       }
                     }}
                   >
@@ -128,7 +138,7 @@ export default function Navbar() {
               </Box>
             </>
           )}
-        </Toolbar>
+        </Box>
       </Container>
 
       <Drawer anchor="right" open={mobileOpen} onClose={() => setMobileOpen(false)}>
@@ -146,6 +156,28 @@ export default function Navbar() {
               </Link>
             </ListItem>
           ))}
+          <ListItem disablePadding>
+            <Link 
+              href="/stores"
+              style={{ textDecoration: 'none', width: '100%', color: 'inherit' }}
+              onClick={() => setMobileOpen(false)}
+            >
+              <ListItemButton>
+                <ListItemIcon>
+                  <LocationOnIcon sx={{ color: '#B19B9B' }} />
+                </ListItemIcon>
+                <ListItemText 
+                  primary="FIND US" 
+                  sx={{ 
+                    '& .MuiTypography-root': { 
+                      color: '#B19B9B',
+                      fontWeight: 500
+                    } 
+                  }} 
+                />
+              </ListItemButton>
+            </Link>
+          </ListItem>
           <ListItem disablePadding>
             <Link 
               href="/contact"

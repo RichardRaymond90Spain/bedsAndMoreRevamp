@@ -1,19 +1,11 @@
-import type { Metadata } from '@/lib/node_modules/next'
-import { Inter } from '@/lib/node_modules/next/font/google'
 import './globals.css'
-import { Navbar } from '@/components/layout/navbar'
-import { Footer } from '@/components/layout/footer'
-import { ThemeProvider } from '@/components/providers/theme-provider'
-import { Toaster } from '@/components/ui/toaster'
+import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Yorkshire Linen Beds & More',
-  description: 'Quality beds, mattresses and home furnishings at great prices',
-  icons: {
-    icon: '/favicon.ico',
-  },
+  description: 'Quality beds and furniture at great prices',
 }
 
 export default function RootLayout({
@@ -22,21 +14,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-          <Toaster />
-        </ThemeProvider>
+    <html lang="en">
+      <body className={`${inter.className} standard-rules`}>
+        {children}
       </body>
     </html>
   )

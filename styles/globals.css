@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom styles */
+:root {
+  --primary: #1a1a1a;
+  --secondary: #ffffff;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4;
+  }
 }
 
 @layer utilities {
