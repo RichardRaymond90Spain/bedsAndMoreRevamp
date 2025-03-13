@@ -1,7 +1,7 @@
 "use client"
 
-import { Box, Container, Grid, Typography, Link, IconButton } from "@/lib/node_modules/@mui/material"
-import { Facebook, Instagram, WhatsApp, Phone, Email, LocationOn } from "@/lib/node_modules/@mui/icons-material"
+import { Box, Container, Grid, Typography, Link, IconButton } from "@mui/material"
+import { Facebook, Instagram, WhatsApp, Phone, Email, LocationOn } from "@mui/icons-material"
 
 export default function Footer() {
   return (
